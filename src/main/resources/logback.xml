@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_DIR" value="/var/log/tomcat7" />
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/web.log</file>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_DIR}/web-%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %-25logger{36} %-3L - %msg%n
+			</pattern>
+		</encoder>
+
+	</appender>
+	<logger name="controller.ViewController" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="controller.Application" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="manager.KeyManager" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="manager.UserManager" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="service.Service" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="dao.UserDAO" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="dao.KeyDAO" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="manager.ParameterManager" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="dao.ParameterDAO" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.LoginServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.RegisterServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.IntroServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.GuideServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.APIManageServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.DBUploadServlet" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.MysqlToRedis" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="servlet.DumpFileParsing" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	
+	<root level="OFF">
+	</root>
+</configuration>

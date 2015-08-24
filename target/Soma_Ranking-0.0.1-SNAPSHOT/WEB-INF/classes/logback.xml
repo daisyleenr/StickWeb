@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_DIR" value="/Users/daisy/Documents/log" />
+	<appender name="ROLLING"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/web.log</file>
+		
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">		
+			<!-- rollover daily -->
+			<fileNamePattern>${LOG_DIR}/web-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>			
+		</rollingPolicy>
+		
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+		
+	</appender>
+	<logger name="controller.ViewController" level="TRACE">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="controller.Application" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="manager.KeyManager" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="manager.UserManager" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="service.Service" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="dao.UserDAO" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	<logger name="dao.KeyDAO" level="INFO">
+		<appender-ref ref="ROLLING" />
+	</logger>
+	
+	<root level="OFF">
+	</root>
+
+</configuration>
