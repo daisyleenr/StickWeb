@@ -8,7 +8,7 @@ public class UserVO {
 	private String email;
 	private String passwd;
 	private String user_name;
-	private String title;
+	//private String title;
 	//private String api_key;
 	private Date created_at;
 	
@@ -18,24 +18,24 @@ public class UserVO {
 		
 	}
 	
-	public UserVO(int id, String email, String passwd, String user_name, String title, Date created_at) {
+	public UserVO(int id, String email, String passwd, String user_name, Date created_at) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.passwd = passwd;
 		this.user_name = user_name;
-		this.title = title;
+		//this.title = title;
 		this.created_at = created_at;
 		
 		setParamList(new ArrayList<ParameterVO>());
 	}
 	
-	public UserVO(String email, String passwd, String user_name, String title) {
+	public UserVO(String email, String passwd, String user_name) {
 		super();
 		this.email = email;
 		this.passwd = passwd;
 		this.user_name = user_name;
-		this.title = title;
+		//this.title = title;
 	}
 
 	public UserVO(String email, String passwd) {
@@ -75,13 +75,13 @@ public class UserVO {
 		this.created_at = created_at;
 	}
 	
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
+//	public String getTitle() {
+//		return title;
+//	}
+//
+//	public void setTitle(String title) {
+//		this.title = title;
+//	}
 
 	@Override
 	public String toString() {

@@ -4,7 +4,7 @@ public class SQL {
 	/*
 	 * User SQL
 	 */
-	public static String USER_INSERT = "insert into tb_user(email, passwd, user_name, title) values(?,?,?,?)";
+	public static String USER_INSERT = "insert into tb_user(email, passwd, user_name) values(?,?,?)";
 	public static String USER_SELECT = "select * from tb_user where email=?";
 	
 	/*

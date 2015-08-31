@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String pageName = "";
 		UserVO user = new UserVO(request.getParameter("email"), request.getParameter("passwd"),
-				request.getParameter("username"), request.getParameter("title"));
+				request.getParameter("username"));
 		log.trace("created user object: # " + user.toString());
 
 		UserVO currUser  = service.userRegiter(user);

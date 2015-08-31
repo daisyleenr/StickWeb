@@ -3,11 +3,6 @@
 	pageEncoding="EUC-KR"%>
 <%
 	UserVO user = (UserVO) session.getAttribute("user");
-	String pageName = (String) request.getAttribute("pageName");
-	
-	if(pageName == null || pageName.isEmpty()){
-		pageName = "intro.jsp";
-	}
 %>
 
 <!DOCTYPE HTML>

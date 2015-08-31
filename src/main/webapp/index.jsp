@@ -34,7 +34,7 @@
 			          <ul class="dropdown-menu">
 			            <li><a href="/api_manage">API Management</a></li>
 			            <li role="separator" class="divider"></li>
-			            <li><a href="/login?logout=true">Sign in</a></li>
+			            <li><a href="/login?logout=true">Logout</a></li>
 			          </ul>
 			        </li>
 			        <%} %>

@@ -37,7 +37,6 @@ public class UserDAO implements DAO {
 			preparedStmt.setString(1, user.getEmail());
 			preparedStmt.setString(2, user.getPasswd());
 			preparedStmt.setString(3, user.getUser_name());
-			preparedStmt.setString(4, user.getTitle());
 
 			status = preparedStmt.executeUpdate();
 			log.debug("execute update: "+SQL.USER_INSERT);
@@ -91,8 +90,7 @@ public class UserDAO implements DAO {
 			log.debug("execute query: "+SQL.USER_SELECT);
 
 			rset.next();
-			result = new UserVO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4),
-					rset.getString(5), rset.getDate(6));
+			result = new UserVO(rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getDate(5));
 			log.debug("set user: " + result.getEmail());
 			
 			rset.close();

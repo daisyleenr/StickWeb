@@ -4,10 +4,6 @@
 	pageEncoding="EUC-KR"%>
 <%
 	UserVO user = (UserVO) session.getAttribute("user");
-	String pageName = (String) request.getAttribute("pageName");
-	if (pageName == null || pageName.isEmpty()) {
-		pageName = "intro.jsp";
-	}
 %>
 
 <!DOCTYPE HTML>
@@ -63,7 +59,6 @@
 						<label class="col-sm-1 control-label" style="float: none; width: 13%; padding-right: 0px; padding-left: 0px;">Email</label><input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" name="email"><br><br>
 						<label class="col-sm-1 control-label" style="float: none; width: 13%; padding-right: 0px; padding-left: 0px;">Password</label><input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password" name="passwd"><br><br>
 						<label class="col-sm-1 control-label" style="float: none; width: 13%; padding-right: 0px; padding-left: 0px;">Username</label><input type="text" class="form-control" id="exampleInputEmail3" placeholder="Username" name="username"><br><br>
-						<label class="col-sm-1 control-label" style="float: none; width: 13%; padding-right: 0px; padding-left: 0px;">Game Title</label><input type="text" class="form-control" id="exampleInputEmail3" placeholder="GameTitle" name="title"><br><br>
 	  <input class="btn btn-default" style="width: 100px;" type="submit" value="Sign Up">
 </form>
 </div>

@@ -31,11 +31,18 @@ public class APIManageServlet extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		UserVO currUser = (UserVO) session.getAttribute("user");
-		service.setNumberOfParameters(currUser);
+		if(currUser == null){
+			String pageName = "index.jsp";
+			response.sendRedirect(pageName);
+			log.trace("redirect: " + pageName);
+		}
+		else{
+			service.setNumberOfParameters(currUser);
 
-		String pageName = "api_manage.jsp";
-		response.sendRedirect(pageName);
-		log.trace("redirect: " + pageName);
+			String pageName = "api_manage.jsp";
+			response.sendRedirect(pageName);
+			log.trace("redirect: " + pageName);
+		}
 	}
 
 	@Override

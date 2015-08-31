@@ -116,7 +116,10 @@ public class DBUploadServlet extends HttpServlet {
 			}
 
 			log.trace("save file");
+			
+			@SuppressWarnings("unused")
 			MysqlToRedis myTest = new MysqlToRedis(filename, currParam);
+			
 			log.trace("convert redis complete");
 			newFile.delete();
 			log.trace("delete file");
