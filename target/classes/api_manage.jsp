@@ -119,7 +119,7 @@ $(document).ready(function() {
 		</div>
           <div class="mastfoot" style="background-color: white;">
             <div class="inner">
-              <p>by <a href="/">@Gangnam Child</a>.</p>
+              <p>by <a href="/">@Gangnam Children</a>.</p>
             </div>
           </div>
         </div>

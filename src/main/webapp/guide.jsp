@@ -598,7 +598,7 @@ Content-Type: text/json
 </div>
           <div class="mastfoot" style="background-color: white; position: relative;">
             <div class="inner">
-              <p>by <a href="/">@Gangnam Child</a>.</p>
+              <p>by <a href="/">@Gangnam Children</a>.</p>
             </div>
           </div>
         </div>
